@@ -6,11 +6,14 @@ A modern, responsive website for Ramkrishna Eye Hospital built with Next.js, Typ
 
 - **Modern Design**: Clean, professional design optimized for healthcare
 - **Responsive Layout**: Works perfectly on all devices (desktop, tablet, mobile)
+- **Poppins Font**: Professional typography with Google Fonts integration
+- **Smooth Animations**: Enhanced user experience with CSS transitions and animations
 - **Online Appointment Booking**: Multi-step appointment form with calendar integration
 - **WhatsApp Integration**: Direct WhatsApp contact for quick communication
 - **Google Maps Integration**: Easy location finding and directions
 - **Contact Forms**: Multiple contact options with form validation
-- **Emergency Contact**: Prominent emergency contact options
+- **Blog System**: Dynamic blog with routing and professional layout
+- **Doctor Profiles**: Professional team section with photos and specializations
 - **SEO Optimized**: Proper meta tags and SEO structure
 
 ## 📱 Pages
@@ -19,21 +22,24 @@ A modern, responsive website for Ramkrishna Eye Hospital built with Next.js, Typ
 - **About**: Hospital information, team details, mission, and values
 - **Contact**: Contact forms, location map, and quick action buttons
 - **Appointment**: Multi-step booking system with doctor selection and calendar
+- **Blog**: Dynamic blog system with individual post pages
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 15+ with App Router
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS with custom animations
+- **Typography**: Poppins font from Google Fonts
 - **Icons**: Heroicons
 - **Form Handling**: React Hook Form (ready for integration)
 - **Date Handling**: date-fns
+- **Image Optimization**: Next.js Image component with external image support
 
 ## 🚀 Getting Started
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/VivekanandDesign/RamkrishnaEyeHospital.git
    cd ramkrishna-eye-hospital
    ```
 
@@ -80,6 +86,11 @@ Modify the Tailwind CSS classes throughout the components. The main colors used 
 - Emergency: Red (red-600, red-700, etc.)
 - WhatsApp: Green (green-600, green-700, etc.)
 
+### Typography
+The website uses Poppins font with all 9 weight variants (100-900). You can use:
+- Default: `font-sans` (applies Poppins automatically)
+- Custom weights: `font-poppins-light`, `font-poppins-medium`, `font-poppins-bold`, etc.
+
 ## 📦 Build for Production
 
 ```bash
@@ -113,6 +124,9 @@ To generate a static version of the site:
 ## 🎨 Design Features
 
 - **Professional Healthcare Design**: Clean, trustworthy appearance
+- **Poppins Typography**: Modern, readable font across all content
+- **Smooth Animations**: CSS transitions and hover effects
+- **6px Border Radius**: Consistent design language
 - **Accessibility**: Proper contrast ratios and semantic HTML
 - **Mobile-First**: Responsive design starting from mobile
 - **Fast Loading**: Optimized images and code splitting
