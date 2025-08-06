@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ramkrishna Eye Hospital - Website
 
-## Getting Started
+A modern, responsive website for Ramkrishna Eye Hospital built with Next.js, TypeScript, and Tailwind CSS. This static website provides comprehensive information about eye care services, online appointment booking, and easy contact options.
 
-First, run the development server:
+## 🌟 Features
+
+- **Modern Design**: Clean, professional design optimized for healthcare
+- **Responsive Layout**: Works perfectly on all devices (desktop, tablet, mobile)
+- **Online Appointment Booking**: Multi-step appointment form with calendar integration
+- **WhatsApp Integration**: Direct WhatsApp contact for quick communication
+- **Google Maps Integration**: Easy location finding and directions
+- **Contact Forms**: Multiple contact options with form validation
+- **Emergency Contact**: Prominent emergency contact options
+- **SEO Optimized**: Proper meta tags and SEO structure
+
+## 📱 Pages
+
+- **Home**: Hero section, services overview, testimonials, and contact CTA
+- **About**: Hospital information, team details, mission, and values
+- **Contact**: Contact forms, location map, and quick action buttons
+- **Appointment**: Multi-step booking system with doctor selection and calendar
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15+ with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Heroicons
+- **Form Handling**: React Hook Form (ready for integration)
+- **Date Handling**: date-fns
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd ramkrishna-eye-hospital
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📞 Contact Information
+
+The website includes the following contact methods:
+
+- **Phone**: +91 98765 43210 (24/7 Emergency)
+- **Email**: info@ramkrishnaeye.com
+- **WhatsApp**: Integrated WhatsApp chat functionality
+- **Address**: 123 Medical Plaza, Health City, Mumbai, Maharashtra 400001
+
+## 🔧 Customization
+
+### Updating Contact Information
+Edit the contact details in:
+- `src/components/Navbar.tsx`
+- `src/components/Footer.tsx`
+- `src/components/ContactCTA.tsx`
+- `src/app/contact/page.tsx`
+
+### Adding New Services
+Update the services array in `src/components/Services.tsx`
+
+### Modifying Doctor Information
+Update the doctors array in `src/app/about/page.tsx` and `src/app/appointment/page.tsx`
+
+### Changing Colors/Theme
+Modify the Tailwind CSS classes throughout the components. The main colors used are:
+- Primary: Blue (blue-600, blue-700, etc.)
+- Emergency: Red (red-600, red-700, etc.)
+- WhatsApp: Green (green-600, green-700, etc.)
+
+## 📦 Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This creates an optimized production build in the `.next` folder.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Static Export (Optional)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To generate a static version of the site:
 
-## Learn More
+1. Add to `next.config.js`:
+   ```javascript
+   /** @type {import('next').NextConfig} */
+   const nextConfig = {
+     output: 'export',
+     trailingSlash: true,
+     images: {
+       unoptimized: true
+     }
+   }
+   module.exports = nextConfig
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Run:
+   ```bash
+   npm run build
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Professional Healthcare Design**: Clean, trustworthy appearance
+- **Accessibility**: Proper contrast ratios and semantic HTML
+- **Mobile-First**: Responsive design starting from mobile
+- **Fast Loading**: Optimized images and code splitting
+- **User Experience**: Intuitive navigation and clear call-to-actions
 
-## Deploy on Vercel
+## 📋 TODO / Future Enhancements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] Add backend integration for appointment booking
+- [ ] Implement email notifications
+- [ ] Add patient portal functionality
+- [ ] Integrate with hospital management system
+- [ ] Add multi-language support
+- [ ] Implement payment gateway for consultation fees
+- [ ] Add live chat functionality
+- [ ] Integrate with Google Calendar for doctor availability
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is created for Ramkrishna Eye Hospital. All rights reserved.
+
+## 📞 Support
+
+For technical support or questions about this website, please contact the development team.
+
+---
+
+**Ramkrishna Eye Hospital** - Excellence in Eye Care 👁️‍🗨️
