@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { CalendarIcon, ClockIcon, UserIcon, ArrowLeftIcon, ShareIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, ClockIcon, UserIcon, ArrowLeftIcon, ShareIcon, EyeIcon, SparklesIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { StarIcon } from '@heroicons/react/24/solid';
 
 // This would typically come from a CMS or database
 const blogPosts = [
@@ -120,162 +121,250 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
   }
 
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        {/* Back Button */}
-        <Link
-          href="/blog"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors"
-        >
-          <ArrowLeftIcon className="h-4 w-4 mr-2" />
-          Back to Blog
-        </Link>
+    <div className="relative min-h-screen">
+      {/* Luxury Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_70%)]"></div>
+      
+      <div className="relative py-32 sm:py-40">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          {/* Premium Back Button */}
+          <Link
+            href="/blog"
+            className="group inline-flex items-center text-blue-600 hover:text-blue-700 font-medium mb-12 transition-all duration-300 bg-white/70 backdrop-blur-sm px-6 py-3 rounded-2xl border border-white/50 shadow-lg hover:shadow-xl"
+          >
+            <ArrowLeftIcon className="h-5 w-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" />
+            Back to Blog
+          </Link>
 
-        {/* Article Header */}
-        <header className="mb-12">
-          <div className="flex items-center space-x-4 mb-4">
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-              {post.category}
-            </span>
-            {post.featured && (
-              <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
-                Featured
-              </span>
-            )}
-          </div>
-
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
-            {post.title}
-          </h1>
-
-          <p className="text-xl leading-8 text-gray-600 mb-8">
-            {post.excerpt}
-          </p>
-
-          <div className="flex items-center justify-between border-t border-b border-gray-200 py-6">
-            <div className="flex items-center space-x-6 text-gray-500">
-              <div className="flex items-center">
-                <UserIcon className="h-5 w-5 mr-2" />
-                <span className="font-medium">{post.author}</span>
-              </div>
-              <div className="flex items-center">
-                <CalendarIcon className="h-5 w-5 mr-2" />
-                <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}</span>
-              </div>
-              <div className="flex items-center">
-                <ClockIcon className="h-5 w-5 mr-2" />
-                <span>{post.readTime}</span>
-              </div>
-            </div>
-
-            <button className="flex items-center text-gray-500 hover:text-blue-600 transition-colors">
-              <ShareIcon className="h-5 w-5 mr-2" />
-              Share
-            </button>
-          </div>
-        </header>
-
-        {/* Featured Image */}
-        <div className="mb-12">
-          <div className="aspect-[16/9] bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <EyeIcon className="h-12 w-12 text-white" />
-              </div>
-              <p className="text-blue-800 font-medium">{post.category}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Article Content */}
-        <article className="prose prose-lg max-w-none">
-          <div 
-            dangerouslySetInnerHTML={{ __html: post.content }}
-            className="text-gray-700 leading-8"
-          />
-        </article>
-
-        {/* Author Bio */}
-        <div className="mt-16 bg-gray-50 rounded-2xl p-8">
-          <div className="flex items-start">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-              <span className="text-white font-bold text-lg">
-                {post.author.split(' ').map(n => n[0]).join('')}
-              </span>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{post.author}</h3>
-              <p className="text-gray-600 mb-4">
-                Senior Ophthalmologist at Ramkrishna Eye Hospital with over 15 years of experience in 
-                cataract surgery and refractive procedures. Dedicated to providing the highest quality 
-                eye care and patient education.
-              </p>
-              <div className="flex space-x-4">
-                <Link
-                  href="/about"
-                  className="text-blue-600 hover:text-blue-800 font-medium text-sm"
-                >
-                  View Profile
-                </Link>
-                <Link
-                  href="/appointment"
-                  className="text-blue-600 hover:text-blue-800 font-medium text-sm"
-                >
-                  Book Appointment
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Related Posts */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedPosts.map((relatedPost) => (
-              <Link
-                key={relatedPost.id}
-                href={`/blog/${relatedPost.id}`}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
-              >
-                <div className="aspect-[16/10] bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-4">
-                  <EyeIcon className="h-8 w-8 text-blue-600" />
+          {/* Premium Article Container */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 backdrop-blur-xl rounded-3xl border border-white/50 shadow-2xl"></div>
+            <article className="relative p-12">
+              {/* Article Header */}
+              <header className="mb-16">
+                <div className="flex items-center space-x-4 mb-8">
+                  <span className="bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-bold">
+                    {post.category}
+                  </span>
+                  {post.featured && (
+                    <span className="bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-bold">
+                      <StarIcon className="h-4 w-4 inline mr-1" />
+                      Featured
+                    </span>
+                  )}
                 </div>
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                  {relatedPost.category}
-                </span>
-                <h3 className="font-semibold text-gray-900 mt-3 mb-2 line-clamp-2">
-                  {relatedPost.title}
-                </h3>
-                <p className="text-sm text-gray-500">{relatedPost.readTime}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
 
-        {/* CTA */}
-        <div className="mt-16 bg-blue-600 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">Need Professional Eye Care?</h2>
-          <p className="text-blue-100 mb-6">
-            Schedule a consultation with our expert ophthalmologists for personalized care.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/appointment"
-              className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-            >
-              Book Appointment
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
-            >
-              Contact Us
-            </Link>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-8 leading-tight">
+                  {post.title}
+                </h1>
+
+                <p className="text-xl leading-relaxed text-slate-600 mb-12 font-light max-w-4xl">
+                  {post.excerpt}
+                </p>
+
+                <div className="flex items-center justify-between border-t border-b border-slate-200 py-8">
+                  <div className="flex items-center space-x-8 text-slate-500">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                        <UserIcon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <span className="font-semibold text-slate-800 block">{post.author}</span>
+                        <span className="text-sm text-slate-500">Senior Ophthalmologist</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <CalendarIcon className="h-5 w-5 mr-2" />
+                      <span className="font-medium">{new Date(post.date).toLocaleDateString('en-US', { 
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <ClockIcon className="h-5 w-5 mr-2" />
+                      <span className="font-medium">{post.readTime}</span>
+                    </div>
+                  </div>
+
+                  <button className="group flex items-center text-slate-500 hover:text-blue-600 transition-colors duration-300 bg-slate-100 hover:bg-blue-50 px-4 py-2 rounded-xl">
+                    <ShareIcon className="h-5 w-5 mr-2" />
+                    Share
+                  </button>
+                </div>
+              </header>
+
+              {/* Premium Featured Image */}
+              <div className="mb-16">
+                <div className="aspect-[16/9] bg-gradient-to-br from-blue-100 to-indigo-200 rounded-3xl flex items-center justify-center shadow-2xl border border-white/50 overflow-hidden">
+                  <div className="text-center p-12">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                      <EyeIcon className="h-16 w-16 text-white" />
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 border border-white/30">
+                      <p className="text-blue-800 font-bold text-xl">{post.category}</p>
+                      <p className="text-blue-600 text-sm mt-1">Expert Medical Insights</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Article Content */}
+              <div className="prose prose-lg max-w-none">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  className="text-slate-700 leading-8 space-y-6"
+                />
+              </div>
+
+              {/* Premium Tags Section */}
+              <div className="mt-16 pt-12 border-t border-slate-200">
+                <h3 className="text-xl font-bold text-slate-800 mb-6">Related Topics</h3>
+                <div className="flex flex-wrap gap-3">
+                  {['Eye Care', 'Vision Health', 'Medical Technology', 'Patient Care', 'Ophthalmology'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-blue-700 px-4 py-2 rounded-xl text-sm font-medium hover:shadow-md transition-all duration-300 cursor-pointer"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </div>
+
+          {/* Premium Author Bio */}
+          <div className="mt-20">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 backdrop-blur-xl rounded-3xl border border-white/50 shadow-xl"></div>
+              <div className="relative p-12">
+                <div className="flex items-start">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl flex items-center justify-center mr-6 flex-shrink-0 shadow-xl">
+                    <span className="text-white font-bold text-2xl">
+                      {post.author.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center mb-4">
+                      <h3 className="text-2xl font-bold text-slate-800 mr-3">{post.author}</h3>
+                      <span className="bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                        Senior Ophthalmologist
+                      </span>
+                    </div>
+                    <p className="text-slate-600 mb-6 text-lg leading-relaxed">
+                      Senior Ophthalmologist at Ramkrishna Eye Hospital with over 15 years of experience in 
+                      cataract surgery and refractive procedures. Dedicated to providing the highest quality 
+                      eye care and patient education.
+                    </p>
+                    <div className="flex space-x-4">
+                      <Link
+                        href="/about"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                      >
+                        View Profile
+                      </Link>
+                      <Link
+                        href="/appointment"
+                        className="bg-white border-2 border-blue-200 text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all duration-300"
+                      >
+                        Book Appointment
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Premium Related Posts */}
+          <div className="mt-20">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-bold text-3xl md:text-4xl mb-4">
+                <SparklesIcon className="h-8 w-8 mr-3 text-blue-600" />
+                Related Articles
+              </div>
+              <p className="text-xl text-slate-600 font-light">Discover more expert insights on eye care</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedPosts.map((relatedPost) => (
+                <Link
+                  key={relatedPost.id}
+                  href={`/blog/${relatedPost.id}`}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 backdrop-blur-xl rounded-3xl border border-white/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2"></div>
+                  <div className="relative p-8">
+                    {/* Premium Featured Image */}
+                    <div className="aspect-[16/10] bg-gradient-to-br from-blue-100 to-indigo-200 rounded-2xl flex items-center justify-center mb-6 shadow-lg overflow-hidden">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                        <EyeIcon className="h-8 w-8 text-white" />
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-bold">
+                        {relatedPost.category}
+                      </span>
+                      <span className="text-slate-400 text-sm font-medium">{relatedPost.readTime}</span>
+                    </div>
+
+                    <h3 className="font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-300 mb-3 line-clamp-2 text-lg leading-tight">
+                      {relatedPost.title}
+                    </h3>
+
+                    <div className="flex items-center text-blue-600 group-hover:text-blue-700 font-medium text-sm">
+                      Read Article
+                      <ArrowRightIcon className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Premium CTA Section */}
+          <div className="mt-20">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl opacity-95"></div>
+              <div className="absolute inset-0 opacity-20 bg-white/5"></div>
+              <div className="relative p-12 text-center">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl mb-8 border border-white/30 shadow-xl">
+                  <EyeIcon className="h-10 w-10 text-white" />
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                  Need Professional Eye Care?
+                </h2>
+                <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                  Schedule a consultation with our expert ophthalmologists for personalized care and comprehensive eye health solutions.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-md mx-auto">
+                  <Link
+                    href="/appointment"
+                    className="group bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+                  >
+                    <span className="flex items-center justify-center">
+                      Book Appointment
+                      <ArrowRightIcon className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="group border-2 border-white/50 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/20 hover:border-white/70 transition-all duration-300"
+                  >
+                    <span className="flex items-center justify-center">
+                      Contact Us
+                      <ArrowRightIcon className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

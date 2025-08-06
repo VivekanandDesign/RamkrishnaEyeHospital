@@ -1,5 +1,17 @@
 import Link from 'next/link';
-import { CalendarIcon, ClockIcon, UserIcon, EyeIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { 
+  CalendarIcon, 
+  ClockIcon, 
+  UserIcon, 
+  EyeIcon, 
+  ArrowRightIcon,
+  SparklesIcon,
+  StarIcon,
+  BookOpenIcon
+} from '@heroicons/react/24/outline';
+import {
+  StarIcon as StarIconSolid
+} from '@heroicons/react/24/solid';
 
 const blogPosts = [
   {
@@ -91,63 +103,96 @@ export default function BlogPage() {
   const regularPosts = blogPosts.filter(post => !post.featured);
 
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Eye Care Blog
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Expert insights, latest treatments, and essential tips for maintaining healthy vision from our ophthalmology specialists.
-          </p>
-        </div>
+    <div className="relative min-h-screen">
+      {/* Luxury Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_70%)]"></div>
+      
+      <div className="relative py-32 sm:py-40">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Premium Header */}
+          <div className="relative text-center mb-20">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-96 h-96 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="relative">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 mb-8">
+                <BookOpenIcon className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-sm font-semibold text-blue-800 tracking-wide uppercase">Expert Insights</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-8 tracking-tight">
+                Eye Care Blog
+              </h1>
+              <p className="text-xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
+                Discover expert insights, cutting-edge treatments, and essential tips for maintaining optimal vision health 
+                from our world-renowned ophthalmology specialists.
+              </p>
+            </div>
+          </div>
 
-        {/* Featured Article */}
+        {/* Premium Featured Article */}
         {featuredPost && (
-          <div className="mt-20">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl overflow-hidden shadow-xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-8 lg:p-12 text-white">
-                  <div className="flex items-center mb-4">
-                    <span className="bg-yellow-500 text-yellow-900 px-3 py-1 rounded-full text-xs font-semibold">
-                      Featured Article
-                    </span>
+          <div className="mb-20">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 rounded-3xl"></div>
+              <div className="relative bg-gradient-to-br from-blue-800/95 to-purple-900/95 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-12 text-white relative">
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-400/20 to-transparent rounded-full blur-2xl"></div>
+                    
+                    <div className="relative">
+                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 text-xs font-bold mb-6">
+                        <SparklesIcon className="h-4 w-4 mr-2" />
+                        Featured Article
+                      </div>
+                      
+                      <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent leading-tight">
+                        {featuredPost.title}
+                      </h2>
+                      <p className="text-blue-100 mb-8 text-lg font-light leading-relaxed">
+                        {featuredPost.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center space-x-6 mb-8 text-blue-200">
+                        <div className="flex items-center">
+                          <UserIcon className="h-4 w-4 mr-2" />
+                          <span className="text-sm font-medium">{featuredPost.author}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CalendarIcon className="h-4 w-4 mr-2" />
+                          <span className="text-sm">{new Date(featuredPost.date).toLocaleDateString()}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <ClockIcon className="h-4 w-4 mr-2" />
+                          <span className="text-sm">{featuredPost.readTime}</span>
+                        </div>
+                      </div>
+                      
+                      <Link
+                        href={`/blog/${featuredPost.id}`}
+                        className="group relative inline-flex items-center bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+                        <span className="relative">Read Full Article</span>
+                        <ArrowRightIcon className="h-5 w-5 ml-2 relative" />
+                      </Link>
+                    </div>
                   </div>
-                  <h2 className="text-3xl font-bold mb-4">{featuredPost.title}</h2>
-                  <p className="text-blue-100 mb-6 text-lg">{featuredPost.excerpt}</p>
                   
-                  <div className="flex items-center space-x-6 mb-6 text-blue-200">
-                    <div className="flex items-center">
-                      <UserIcon className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{featuredPost.author}</span>
+                  <div className="bg-gradient-to-br from-blue-100/20 to-purple-100/20 flex items-center justify-center p-12">
+                    <div className="text-center">
+                      <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <EyeIcon className="h-16 w-16 text-white" />
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-3 border border-white/30">
+                        <p className="text-blue-200 font-bold text-lg">{featuredPost.category}</p>
+                        <p className="text-blue-300 text-sm mt-1">Expert Insights</p>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <CalendarIcon className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{new Date(featuredPost.date).toLocaleDateString()}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <ClockIcon className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{featuredPost.readTime}</span>
-                    </div>
-                  </div>
-                  
-                  <Link
-                    href={`/blog/${featuredPost.id}`}
-                    className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-                  >
-                    Read Full Article
-                    <ArrowRightIcon className="h-4 w-4 ml-2" />
-                  </Link>
-                </div>
-                
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <EyeIcon className="h-12 w-12 text-white" />
-                    </div>
-                    <p className="text-blue-800 font-medium">Featured Article</p>
-                    <p className="text-blue-600 text-sm mt-2">{featuredPost.category}</p>
                   </div>
                 </div>
               </div>
@@ -155,155 +200,178 @@ export default function BlogPage() {
           </div>
         )}
 
-        {/* Category Filter */}
-        <div className="mt-20">
-          <div className="flex flex-wrap justify-center gap-3">
+        {/* Premium Category Filter */}
+        <div className="mb-16">
+          <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-colors text-sm font-medium"
+                className="group relative overflow-hidden px-6 py-3 rounded-2xl border-2 border-slate-200 bg-white/70 backdrop-blur-sm text-slate-700 hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                {category}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                <span className="relative">{category}</span>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Blog Posts Grid */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {regularPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-[16/10] bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <EyeIcon className="h-8 w-8 text-white" />
-                  </div>
-                  <span className="text-blue-800 font-medium text-sm">{post.category}</span>
-                </div>
-              </div>
+        {/* Premium Blog Posts Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {regularPosts.map((post, index) => (
+            <article key={post.id} className="group relative">
+              {/* Floating background effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 rounded-3xl blur-xl transition-all duration-500"></div>
               
-              <div className="p-6">
-                <div className="flex items-center space-x-4 mb-3 text-sm text-gray-500">
-                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                    {post.category}
-                  </span>
-                  <span>{post.readTime}</span>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 border border-white/50">
+                {/* Premium Image Section */}
+                <div className="aspect-[16/10] bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20"></div>
+                  <div className="relative text-center p-8">
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                      <EyeIcon className="h-10 w-10 text-white" />
+                    </div>
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                      <span className="text-blue-800 font-bold text-sm">{post.category}</span>
+                    </div>
+                  </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                  <Link href={`/blog/${post.id}`}>
-                    {post.title}
-                  </Link>
-                </h3>
-                
-                <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3 text-sm text-gray-500">
-                    <span>{post.author}</span>
-                    <span>•</span>
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                <div className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold border border-blue-200">
+                      {post.category}
+                    </span>
+                    <span className="text-slate-500 text-sm font-medium">{post.readTime}</span>
                   </div>
                   
-                  <Link
-                    href={`/blog/${post.id}`}
-                    className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center"
-                  >
-                    Read More
-                    <ArrowRightIcon className="h-3 w-3 ml-1" />
-                  </Link>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
+                    <Link href={`/blog/${post.id}`}>
+                      {post.title}
+                    </Link>
+                  </h3>
+                  
+                  <p className="text-slate-600 mb-6 line-clamp-3 font-light leading-relaxed">{post.excerpt}</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3 text-sm text-slate-500">
+                      <span className="font-medium">{post.author}</span>
+                      <span>•</span>
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                    </div>
+                    
+                    <Link
+                      href={`/blog/${post.id}`}
+                      className="group/link inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-300"
+                    >
+                      Read More
+                      <ArrowRightIcon className="h-4 w-4 ml-1 transform group-hover/link:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </article>
           ))}
         </div>
 
-        {/* Newsletter Subscription */}
-        <div className="mt-20 bg-blue-50 rounded-2xl p-8 lg:p-12">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Stay Updated with Eye Care Tips
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter and receive the latest eye care insights, health tips, and updates about new treatments directly in your inbox.
-            </p>
+        {/* Premium Newsletter Subscription */}
+        <div className="relative mb-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 rounded-3xl"></div>
+          <div className="relative bg-gradient-to-br from-blue-800/95 to-purple-900/95 backdrop-blur-xl rounded-3xl p-16 border border-white/10 shadow-2xl text-center">
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-400/20 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-purple-400/20 to-transparent rounded-full blur-xl"></div>
             
-            <div className="max-w-md mx-auto">
-              <div className="flex gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                  Subscribe
-                </button>
+            <div className="relative">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <BookOpenIcon className="h-8 w-8 text-white" />
               </div>
-              <p className="text-sm text-gray-500 mt-3">
-                We respect your privacy. Unsubscribe at any time.
+              
+              <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">
+                Stay Updated with 
+                <span className="block bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+                  Eye Care Tips
+                </span>
+              </h2>
+              <p className="text-xl text-blue-100 mb-10 font-light leading-relaxed max-w-3xl mx-auto">
+                Subscribe to our newsletter and receive the latest eye care insights, health tips, and updates about 
+                new treatments directly in your inbox.
               </p>
+              
+              <div className="max-w-md mx-auto">
+                <div className="flex gap-4">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all duration-300 text-white placeholder-blue-200"
+                  />
+                  <button className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                    Subscribe
+                  </button>
+                </div>
+                <p className="text-sm text-blue-200 mt-4">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Popular Topics */}
-        <div className="mt-20">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Popular Topics</h2>
+        {/* Premium Popular Topics */}
+        <div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-4">
+              Popular Topics
+            </h2>
+            <p className="text-lg text-slate-600 font-light">Discover trending eye care topics and expert insights</p>
+          </div>
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl">👁️</span>
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <span className="text-2xl">👁️</span>
+                </div>
+                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">Eye Strain</h3>
+                <p className="text-xs text-slate-600 font-medium">12 articles</p>
               </div>
-              <h3 className="font-semibold text-gray-900 text-sm">Eye Strain</h3>
-              <p className="text-xs text-gray-600 mt-1">12 articles</p>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl">⚕️</span>
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <span className="text-2xl">⚕️</span>
+                </div>
+                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">Surgery Guide</h3>
+                <p className="text-xs text-slate-600 font-medium">8 articles</p>
               </div>
-              <h3 className="font-semibold text-gray-900 text-sm">Surgery Guide</h3>
-              <p className="text-xs text-gray-600 mt-1">8 articles</p>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl">👶</span>
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <span className="text-2xl">👶</span>
+                </div>
+                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors duration-300">Children&apos;s Eyes</h3>
+                <p className="text-xs text-slate-600 font-medium">6 articles</p>
               </div>
-              <h3 className="font-semibold text-gray-900 text-sm">Children&apos;s Eyes</h3>
-              <p className="text-xs text-gray-600 mt-1">6 articles</p>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl">🔬</span>
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <span className="text-2xl">🔬</span>
+                </div>
+                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors duration-300">New Technology</h3>
+                <p className="text-xs text-slate-600 font-medium">5 articles</p>
               </div>
-              <h3 className="font-semibold text-gray-900 text-sm">New Technology</h3>
-              <p className="text-xs text-gray-600 mt-1">5 articles</p>
             </div>
           </div>
         </div>
 
-        {/* Contact CTA */}
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">Have Questions About Your Eye Health?</h2>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Our expert ophthalmologists are here to help. Schedule a consultation or contact us for personalized advice.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/appointment"
-              className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-            >
-              Book Consultation
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
         </div>
       </div>
     </div>

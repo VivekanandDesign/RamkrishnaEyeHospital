@@ -1,7 +1,21 @@
 'use client';
 
 import { useState } from 'react';
-import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { 
+  PhoneIcon, 
+  EnvelopeIcon, 
+  MapPinIcon, 
+  ClockIcon,
+  SparklesIcon,
+  HeartIcon,
+  ChatBubbleBottomCenterTextIcon
+} from '@heroicons/react/24/outline';
+import { 
+  PhoneIcon as PhoneIconSolid,
+  EnvelopeIcon as EnvelopeIconSolid,
+  MapPinIcon as MapPinIconSolid,
+  ClockIcon as ClockIconSolid
+} from '@heroicons/react/24/solid';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -41,498 +55,351 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Contact Us
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Get in touch with us for appointments, inquiries, or emergency care. We&apos;re here to help!
-          </p>
-        </div>
-
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h2>
+    <div className="relative min-h-screen">
+      {/* Luxury Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_70%)]"></div>
+      
+      <div className="relative py-32 sm:py-40">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Premium Header */}
+          <div className="relative text-center mb-20">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-96 h-96 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
+            </div>
             
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
-                  <PhoneIcon className="h-6 w-6 text-white" />
+            <div className="relative">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 mb-8">
+                <ChatBubbleBottomCenterTextIcon className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-sm font-semibold text-blue-800 tracking-wide uppercase">Connect With Us</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-8 tracking-tight">
+                Contact Us
+              </h1>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+                Get in touch with our world-class team for appointments, consultations, or emergency care. 
+                We&apos;re here to provide exceptional service and support.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Premium Contact Information */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/60 backdrop-blur-xl rounded-3xl border border-white/50 shadow-2xl"></div>
+              <div className="relative p-12">
+                <div className="mb-12">
+                  <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 mb-6">
+                    <HeartIcon className="h-5 w-5 text-blue-600 mr-2" />
+                    <span className="text-sm font-semibold text-blue-800 tracking-wide uppercase">Contact Information</span>
+                  </div>
+                  <h2 className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-4">
+                    Connect With Excellence
+                  </h2>
+                  <p className="text-lg text-slate-600 font-light">
+                    Multiple ways to reach our dedicated team of specialists
+                  </p>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Phone Numbers</h3>
-                  <div className="mt-2 space-y-2">
-                    <div>
-                      <a href="tel:+919876543210" className="text-blue-600 hover:text-blue-800 font-medium text-lg">
-                        +91 98765 43210
-                      </a>
-                      <p className="text-sm text-red-600 font-medium">24/7 Emergency Hotline</p>
+                
+                <div className="space-y-10">
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 to-pink-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-start p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500">
+                          <PhoneIconSolid className="h-8 w-8 text-white" />
+                        </div>
+                      </div>
+                      <div className="ml-6 flex-1">
+                        <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-red-600 transition-colors duration-300">
+                          Phone Numbers
+                        </h3>
+                        <div className="space-y-3">
+                          <div>
+                            <a href="tel:+919876543210" className="text-lg font-semibold text-red-600 hover:text-red-700 transition-colors duration-300">
+                              +91 98765 43210
+                            </a>
+                            <p className="text-sm font-medium text-red-500 bg-red-50 inline-block px-3 py-1 rounded-full mt-1">
+                              24/7 Emergency Hotline
+                            </p>
+                          </div>
+                          <div>
+                            <a href="tel:+912223456789" className="text-lg font-medium text-slate-700 hover:text-blue-600 transition-colors duration-300">
+                              +91 22 2345 6789
+                            </a>
+                            <p className="text-sm text-slate-500">General Appointments</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <a href="tel:+912223456789" className="text-blue-600 hover:text-blue-800 font-medium">
-                        +91 22 2345 6789
-                      </a>
-                      <p className="text-sm text-gray-500">General Appointments</p>
+                  </div>
+                  
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-start p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500">
+                          <EnvelopeIconSolid className="h-8 w-8 text-white" />
+                        </div>
+                      </div>
+                      <div className="ml-6 flex-1">
+                        <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                          Email Address
+                        </h3>
+                        <div className="space-y-2">
+                          <div>
+                            <a href="mailto:info@ramkrishnaeye.com" className="text-lg font-medium text-blue-600 hover:text-blue-700 transition-colors duration-300">
+                              info@ramkrishnaeye.com
+                            </a>
+                            <p className="text-sm text-slate-500">General Inquiries</p>
+                          </div>
+                          <div>
+                            <a href="mailto:emergency@ramkrishnaeye.com" className="text-lg font-medium text-blue-600 hover:text-blue-700 transition-colors duration-300">
+                              emergency@ramkrishnaeye.com
+                            </a>
+                            <p className="text-sm text-slate-500">Emergency Cases</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-start p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500">
+                          <MapPinIconSolid className="h-8 w-8 text-white" />
+                        </div>
+                      </div>
+                      <div className="ml-6 flex-1">
+                        <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
+                          Location
+                        </h3>
+                        <div className="space-y-2">
+                          <p className="text-lg font-medium text-slate-700">Ramkrishna Eye Hospital</p>
+                          <p className="text-slate-600">123 Medical Plaza, Health City</p>
+                          <p className="text-slate-600">Mumbai, Maharashtra 400001</p>
+                          <a 
+                            href="https://maps.google.com/?q=123+Medical+Plaza+Health+City+Mumbai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium mt-3 group/link"
+                          >
+                            Get Directions 
+                            <svg className="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-start p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500">
+                          <ClockIconSolid className="h-8 w-8 text-white" />
+                        </div>
+                      </div>
+                      <div className="ml-6 flex-1">
+                        <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                          Working Hours
+                        </h3>
+                        <div className="space-y-2">
+                          <p className="text-lg font-medium text-slate-700">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                          <p className="text-lg font-medium text-slate-700">Sunday: 10:00 AM - 5:00 PM</p>
+                          <p className="text-red-600 font-semibold bg-red-50 inline-block px-3 py-1 rounded-full mt-2">
+                            24/7 Emergency Services
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
-                  <EnvelopeIcon className="h-6 w-6 text-white" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                  <div className="mt-2 space-y-1">
-                    <a href="mailto:info@ramkrishnaeye.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                      info@ramkrishnaeye.com
+
+                {/* Premium Quick Action Buttons */}
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold text-slate-800 mb-6">Quick Actions</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a
+                      href="https://wa.me/919876543210"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative overflow-hidden bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative">💬 WhatsApp Chat</span>
                     </a>
-                    <p className="text-sm text-gray-500">General Inquiries</p>
-                    <a href="mailto:emergency@ramkrishnaeye.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                      emergency@ramkrishnaeye.com
+                    <a
+                      href="tel:+919876543210"
+                      className="group relative overflow-hidden bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative">🚨 Emergency Call</span>
                     </a>
-                    <p className="text-sm text-gray-500">Emergency Cases</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
-                  <MapPinIcon className="h-6 w-6 text-white" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Address</h3>
-                  <div className="mt-2">
-                    <p className="text-gray-700">Ramkrishna Eye Hospital</p>
-                    <p className="text-gray-700">123 Medical Plaza, Health City</p>
-                    <p className="text-gray-700">Mumbai, Maharashtra 400001</p>
-                    <a 
+                    <a
+                      href="/appointment"
+                      className="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative">📅 Book Appointment</span>
+                    </a>
+                    <a
                       href="https://maps.google.com/?q=123+Medical+Plaza+Health+City+Mumbai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center mt-2"
+                      className="group relative overflow-hidden bg-gradient-to-r from-slate-500 to-gray-600 hover:from-slate-600 hover:to-gray-700 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
                     >
-                      Get Directions →
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative">🗺️ Get Directions</span>
                     </a>
                   </div>
                 </div>
               </div>
-              
-              <div className="flex items-start">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
-                  <ClockIcon className="h-6 w-6 text-white" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Working Hours</h3>
-                  <div className="mt-2 space-y-1">
-                    <p className="text-gray-700">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                    <p className="text-gray-700">Sunday: 10:00 AM - 5:00 PM</p>
-                    <p className="text-red-600 font-medium">24/7 Emergency Services Available</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Quick Action Buttons */}
-            <div className="mt-12 space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Quick Actions</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a
-                  href="https://wa.me/919876543210"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-                >
-                  💬 WhatsApp Chat
-                </a>
-                <a
-                  href="tel:+919876543210"
-                  className="flex items-center justify-center bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-                >
-                  🚨 Emergency Call
-                </a>
-                <a
-                  href="/appointment"
-                  className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-                >
-                  📅 Book Appointment
-                </a>
-                <a
-                  href="https://maps.google.com/?q=123+Medical+Plaza+Health+City+Mumbai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-                >
-                  🗺️ Get Directions
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-            
-            {submitted ? (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
-                <h3 className="font-semibold">Message Sent Successfully!</h3>
-                <p>Thank you for contacting us. We&apos;ll get back to you within 24 hours.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors"
-                      placeholder="your@email.com"
-                    />
+            {/* Premium Contact Form */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 backdrop-blur-xl rounded-3xl border border-white/50 shadow-2xl"></div>
+              <div className="relative p-12">
+                <div className="mb-8">
+                  <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 border border-indigo-200 mb-6">
+                    <SparklesIcon className="h-5 w-5 text-indigo-600 mr-2" />
+                    <span className="text-sm font-semibold text-indigo-800 tracking-wide uppercase">Send Message</span>
                   </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
+                  <h2 className="text-4xl font-bold bg-gradient-to-r from-slate-800 to-indigo-800 bg-clip-text text-transparent mb-4">
+                    Get In Touch
+                  </h2>
+                  <p className="text-lg text-slate-600 font-light">
+                    Share your concerns and we&apos;ll respond within 24 hours
+                  </p>
                 </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="appointment">Appointment Inquiry</option>
-                    <option value="emergency">Emergency Consultation</option>
-                    <option value="insurance">Insurance Questions</option>
-                    <option value="services">Services Information</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors resize-none"
-                    placeholder="Please describe your inquiry or concern..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-
-        {/* Photo & Video Gallery */}
-        <div className="mt-20">
-          <div className="mx-auto max-w-2xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Hospital Gallery
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              Take a virtual tour of our modern facilities and advanced medical equipment
-            </p>
-          </div>
-
-          {/* Photo Gallery */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Our Facilities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Reception Area */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">🏥</span>
+                
+                {submitted ? (
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-green-400/20 rounded-2xl"></div>
+                    <div className="relative bg-emerald-50/80 backdrop-blur-sm border border-emerald-200 text-emerald-800 p-8 rounded-2xl">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-emerald-900 mb-3">Message Sent Successfully!</h3>
+                        <p className="text-emerald-700 text-lg">Thank you for contacting us. Our team will get back to you within 24 hours.</p>
+                      </div>
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Reception Area</h4>
-                    <p className="text-sm text-gray-600 mt-2">Comfortable waiting area with modern amenities</p>
                   </div>
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-              </div>
-
-              {/* Operating Theater */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">⚕️</span>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-3">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-6 py-4 bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-slate-800 placeholder-slate-400 shadow-lg hover:shadow-xl"
+                        placeholder="Enter your full name"
+                      />
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Operating Theater</h4>
-                    <p className="text-sm text-gray-600 mt-2">State-of-the-art surgical facilities</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-              </div>
 
-              {/* Diagnostic Equipment */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">🔬</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Diagnostic Lab</h4>
-                    <p className="text-sm text-gray-600 mt-2">Advanced diagnostic equipment and testing</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-              </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-3">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-6 py-4 bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-slate-800 placeholder-slate-400 shadow-lg hover:shadow-xl"
+                          placeholder="your@email.com"
+                        />
+                      </div>
 
-              {/* Consultation Room */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">👨‍⚕️</span>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-3">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-6 py-4 bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-slate-800 placeholder-slate-400 shadow-lg hover:shadow-xl"
+                          placeholder="+91 98765 43210"
+                        />
+                      </div>
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Consultation Room</h4>
-                    <p className="text-sm text-gray-600 mt-2">Private consultation with our specialists</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-              </div>
 
-              {/* Recovery Room */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-teal-100 to-teal-200 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">🛏️</span>
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-3">
+                        Subject *
+                      </label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        required
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-6 py-4 bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-slate-800 shadow-lg hover:shadow-xl"
+                      >
+                        <option value="">Select a subject</option>
+                        <option value="appointment">Appointment Inquiry</option>
+                        <option value="emergency">Emergency Consultation</option>
+                        <option value="insurance">Insurance Questions</option>
+                        <option value="services">Services Information</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900">Recovery Room</h4>
-                    <p className="text-sm text-gray-600 mt-2">Comfortable post-surgery recovery area</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-              </div>
 
-              {/* Pharmacy */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">💊</span>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-3">
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={6}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-6 py-4 bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 resize-none text-slate-800 placeholder-slate-400 shadow-lg hover:shadow-xl"
+                        placeholder="Please describe your inquiry or concern..."
+                      />
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900">In-House Pharmacy</h4>
-                    <p className="text-sm text-gray-600 mt-2">Complete range of eye medications</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="group relative w-full overflow-hidden bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 disabled:from-blue-300 disabled:to-indigo-300 text-white py-4 px-8 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:scale-100 disabled:shadow-lg"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative text-lg">
+                        {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                      </span>
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
 
-          {/* Video Gallery */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Video Tours & Procedures</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Hospital Tour Video */}
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-                <div className="aspect-video bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors cursor-pointer">
-                      <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <h4 className="text-xl font-semibold">Hospital Virtual Tour</h4>
-                    <p className="text-blue-100 text-sm mt-2">Complete walkthrough of our facilities</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">
-                    5:30
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h5 className="font-semibold text-gray-900 mb-2">Complete Hospital Tour</h5>
-                  <p className="text-gray-600 text-sm">Take a comprehensive virtual tour of our modern eye care facility, from reception to operating theaters.</p>
-                </div>
-              </div>
-
-              {/* Cataract Surgery Video */}
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-                <div className="aspect-video bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors cursor-pointer">
-                      <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <h4 className="text-xl font-semibold">Cataract Surgery</h4>
-                    <p className="text-green-100 text-sm mt-2">Modern phacoemulsification procedure</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">
-                    3:45
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h5 className="font-semibold text-gray-900 mb-2">Cataract Surgery Procedure</h5>
-                  <p className="text-gray-600 text-sm">Learn about our advanced cataract surgery techniques and what to expect during the procedure.</p>
-                </div>
-              </div>
-
-              {/* Patient Testimonial Video */}
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-                <div className="aspect-video bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors cursor-pointer">
-                      <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <h4 className="text-xl font-semibold">Patient Stories</h4>
-                    <p className="text-purple-100 text-sm mt-2">Real experiences from our patients</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">
-                    4:15
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h5 className="font-semibold text-gray-900 mb-2">Patient Success Stories</h5>
-                  <p className="text-gray-600 text-sm">Hear from our patients about their journey to better vision and their experience at our hospital.</p>
-                </div>
-              </div>
-
-              {/* Eye Care Tips Video */}
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-                <div className="aspect-video bg-gradient-to-br from-orange-600 to-orange-800 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors cursor-pointer">
-                      <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <h4 className="text-xl font-semibold">Eye Care Tips</h4>
-                    <p className="text-orange-100 text-sm mt-2">Expert advice for healthy eyes</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">
-                    6:20
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h5 className="font-semibold text-gray-900 mb-2">Daily Eye Care Tips</h5>
-                  <p className="text-gray-600 text-sm">Expert advice from our doctors on maintaining healthy eyes and preventing common eye problems.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* View More Button */}
-            <div className="text-center mt-8">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                View More Videos
-              </button>
-            </div>
-          </div>
-
-          {/* Awards & Certifications Gallery */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Awards & Certifications</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🏆</span>
-                </div>
-                <h4 className="font-semibold text-gray-900 text-sm">Best Eye Hospital 2023</h4>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">✅</span>
-                </div>
-                <h4 className="font-semibold text-gray-900 text-sm">NABH Accredited</h4>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">⭐</span>
-                </div>
-                <h4 className="font-semibold text-gray-900 text-sm">Patient Choice Award</h4>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🎓</span>
-                </div>
-                <h4 className="font-semibold text-gray-900 text-sm">ISO 9001:2015</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Map */}
-        <div className="mt-20">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Find Us</h2>
-          <div className="bg-gray-200 rounded-2xl p-4">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.9073451165895!2d72.8276!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA0JzMzLjYiTiA3MsKwNDknMzkuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="450"
-              style={{ border: 0, borderRadius: '12px' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Ramkrishna Eye Hospital Location"
-            ></iframe>
-          </div>
         </div>
       </div>
     </div>
