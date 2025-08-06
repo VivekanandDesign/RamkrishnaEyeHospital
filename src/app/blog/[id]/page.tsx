@@ -1,7 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 import { CalendarIcon, ClockIcon, UserIcon, ArrowLeftIcon, ShareIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 // This would typically come from a CMS or database
@@ -72,6 +69,13 @@ const blogPosts = [
   // Add more blog posts as needed
 ];
 
+// Generate static paths for static export
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    id: post.id.toString(),
+  }));
+}
+
 const relatedPosts = [
   {
     id: 3,
@@ -93,9 +97,9 @@ const relatedPosts = [
   },
 ];
 
-export default function BlogPost() {
-  const params = useParams();
-  const postId = parseInt(params.id as string);
+export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const postId = parseInt(id);
   const post = blogPosts.find(p => p.id === postId);
 
   if (!post) {
